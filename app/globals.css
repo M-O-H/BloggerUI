@@ -4,6 +4,11 @@
   --primary: #050506;
 }
 
+html.dark {
+  --background: #0A0D14;
+  --foreground: #ffffff;
+  --primary: #6289FF;
+}
 
 body {
   background: var(--background);

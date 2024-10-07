@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
+import ThemeToggle from "@/utils/ThemeToggle";
+import ThemeProvider from "@/utils/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,7 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+        <ThemeProvider
+        >
+          <ThemeToggle />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
