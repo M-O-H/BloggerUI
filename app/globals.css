@@ -2,12 +2,21 @@
   --background: #ffffff;
   --foreground: #050506;
   --primary: #050506;
+  --border-radius: 9px;
+  --bg-dm: #F3F4F7;
+  --text-dm: #636a76;
+  --primary-hsl: 940;
 }
 
 html.dark {
   --background: #0A0D14;
   --foreground: #ffffff;
   --primary: #6289FF;
+  --border-radius: 9px;
+  --bg-dm: #0E131E;
+  --text-dm: #9896a3;
+  --primary-hsl: 222;
+  --primary-dm: #162138;
 }
 
 body {
