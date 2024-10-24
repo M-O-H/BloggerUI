@@ -32,3 +32,25 @@
 	color: red;
 	font-weight: bold;
 }
+
+.formContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 35rem;
+	margin-top: 2rem;
+}
+
+
+
+@media only screen and (max-width: 767px) {
+	.formContainer {
+		width: 100%;
+
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+	.formContainer {}
+}

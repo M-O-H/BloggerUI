@@ -19,6 +19,7 @@ const InputField: React.FC<InputFieldProps> = ({ label, type, id, placeholder })
 				placeholder={placeholder}
 				className={styles.inputField}
 				aria-label={label}
+				required
 			/>
 
 		</div>

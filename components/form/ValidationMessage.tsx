@@ -1,8 +1,10 @@
 import styles from "./form.module.css";
 
-const message = "Email/password inccorrect";
+interface ValidationMessage {
+	message: string,
+}
 
-const ValidationMessage = () => (
+const ValidationMessage: React.FC<ValidationMessage> = ({ message }) => (
 	<div className={styles.messageContainer} >
 		<p className={styles.errorMessage} role="alert">
 			{message}

@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next'
 import styles from '../auth.module.css';
 import InputField from '@/components/form/inputField';
@@ -31,17 +32,19 @@ const SubmitBtn = () =>
 
 
 
-const SignInPage: React.FC = () => {
+const SignUpPage: React.FC = () => {
 
 	return (
 		<main className={`${styles.signInContainer} ${roboto.className}`}>
 			<section aria-labelledby="signin-heading">
-				<h1 className={styles.header} id="signin-heading">Welcome back!</h1>
-				<p className={styles.subHeader}>Sign in to access your account and to share blogs.</p>
+				<h1 className={styles.header} id="signin-heading">Create account!</h1>
+				<p className={styles.subHeader}>create your account and share to community</p>
 			</section>
 
 			<SubmitForm
 				nameInputField={<InputField label="username" type="username" id="username" placeholder="Enter your username" />}
+
+				emailInputField={<InputField label="Email" type="email" id="email" placeholder="Enter your email" />}
 
 				passInputField={<InputField label="Password" type="Password" id="password" placeholder="Enter your password" />}
 
@@ -49,18 +52,17 @@ const SignInPage: React.FC = () => {
 
 				SubmitButton={<SubmitBtn />}
 
-				ValidationMsg={<ValidationMessage message='incorrect Email/password' />}
+				ValidationMsg={<ValidationMessage message="email already exist" />}
 
-				route='signin'
-
+				route='signup'
 			/>
 
 			<p className={styles.signUpPrompt}>
-				Don't have an account? <Link href='/auth/signup'>Sign Up</Link>
+				Don't have an account? <Link href="signin">Sign In</Link>
 			</p>
 
 		</main >
 
 	);
 }
-export default SignInPage;
+export default SignUpPage;

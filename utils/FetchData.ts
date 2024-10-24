@@ -38,13 +38,18 @@ export const updatedPost = async (id: number) => {
 	}
 }
 
-export const authUser = async ({ username, password }: { username: string, password: string }) => {
+interface userData {
+	username: string,
+	email?: string,
+	password: string,
+}
+export const authUser = async (data: userData, route: string) => {
 	try {
-		const res = await fetch(`${BASE_URL}/auth/signin`, {
+		const res = await fetch(`${BASE_URL}/auth/${route}`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			credentials: 'include', // Important: This ensures cookies are sent with the request!
-			body: JSON.stringify({ username, password }),
+			body: JSON.stringify(data),
 		}
 		); if (!res.ok) throw new Error("Bad Response", {
 			cause: {
@@ -54,6 +59,7 @@ export const authUser = async ({ username, password }: { username: string, passw
 		return await res.json();
 	}
 	catch (err) {
+		console.log(err);
 	}
 }
 
