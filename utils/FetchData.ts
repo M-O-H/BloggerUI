@@ -1,12 +1,16 @@
-import { throws } from "assert";
-import { error } from "console";
-import { type } from "os";
-
 const BASE_URL = "http://localhost:3003/api/v1"
 
-export const getPublicArtilces = async () => {
+function expensiveCall() {
+	return new Promise((resolve) => {
+		setTimeout(() => {
+			const data = { message: "Data fetched after 2 seconds" };
+			resolve(data);
+		}, 3000); // Delay of 2 seconds
+	});
+}
+export const getPublicArtilces = async ({ query, currentPage }: { query: string, currentPage: number }) => {
 	try {
-		const res = await fetch(`${BASE_URL}/posts`);
+		const res = await fetch(`${BASE_URL}/posts?query=${query}&page=${currentPage}`);
 		if (!res.ok) throw new Error("Bad Response", {
 			cause: {
 				res,
@@ -19,6 +23,7 @@ export const getPublicArtilces = async () => {
 }
 
 export const updatedPost = async (id: number) => {
+	expensiveCall();
 	try {
 		const res = await fetch(`${BASE_URL}/posts/${id}`, {
 			method: 'PATCH',

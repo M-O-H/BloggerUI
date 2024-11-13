@@ -1,0 +1,30 @@
+.wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.input {
+	padding: 1rem;
+	border-radius: 10px;
+	background: var(--previewCard-bg-color);
+	width: 30%;
+	font-size: clamp(0.4rem, 2vw + 1rem, 1rem);
+	border: none;
+	outline: none;
+
+	box-shadow: 1px 2px 6px 2px rgba(0, 0, 0, 0.14);
+	-webkit-box-shadow: 1px 2px 6px 2px rgba(0, 0, 0, 0.14);
+	-moz-box-shadow: 1px 2px 6px 2px rgba(0, 0, 0, 0.14);
+
+	&:focus {
+		outline: 2px soild var(--primary);
+	}
+}
+
+
+@media only screen and (max-width: 767px) {
+
+	.input {
+		width: 60%;
+	}
+}

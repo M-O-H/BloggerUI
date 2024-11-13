@@ -20,7 +20,7 @@ const Options = () =>
 
 		</div>
 
-		<a href="#forgot-password">Forget password</a>
+		<Link href="#forgot-password">Forget password</Link>
 
 	</div>
 

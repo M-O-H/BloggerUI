@@ -1,11 +1,18 @@
 :root {
-  --background: #ffffff;
+  --background: #f1f3f3;
   --foreground: #050506;
-  --primary: #050506;
+  --primary: #6289FF;
   --border-radius: 9px;
-  --bg-dm: #F3F4F7;
+  --bg-dm: #FFFFFF;
   --text-dm: #636a76;
   --primary-hsl: 940;
+  --previewCard-bg-color: #FFFFFF;
+  --card-border-color: none;
+  --sk-tag-color: #1c253b;
+  --summary-color: #5c5c5c;
+  --navbar-bg-color: #FFFFFF;
+  --skeleton-color: #b8b8b8;
+  --skeleton-light: #cfcccc;
 }
 
 html.dark {
@@ -17,6 +24,12 @@ html.dark {
   --text-dm: #9896a3;
   --primary-hsl: 222;
   --primary-dm: #162138;
+  --previewCard-bg-color: #151e30;
+  --card-border-color: #242A38;
+  --summary-color: #d5e9ef;
+  --navbar-bg-color: #0E131E;
+  --skeleton-color: #273352;
+  --skeleton-light: #303e63
 }
 
 body {

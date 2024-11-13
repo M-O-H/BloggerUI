@@ -1,0 +1,156 @@
+.link {
+	background-color: var(--bg-dm);
+	width: 430px;
+	padding: 10px 1rem;
+	border-radius: 7px;
+}
+
+.author {
+	padding: 10px 0;
+	display: flex;
+	gap: 20px;
+}
+
+.avatar {
+	background-color: var(--skeleton-color);
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+}
+
+.authorInfo {
+	display: flex;
+	flex-direction: column;
+	text-align: start;
+	gap: 10px;
+}
+
+.username,
+.postDate {
+	background-color: var(--skeleton-color);
+	padding: 8px;
+	height: 8px;
+	border-radius: 5px;
+}
+
+.username {
+	width: 90px;
+}
+
+.postDate {
+	width: 190px;
+}
+
+
+.title {
+	padding: 0.8rem;
+	background-color: var(--skeleton-color);
+	margin-bottom: 10px;
+	line-height: 1.3;
+	border-radius: 6px;
+	width: 60%;
+}
+
+.summary {
+	padding: 0.5rem;
+	background-color: var(--skeleton-color);
+	margin-bottom: 10px;
+}
+
+.stroke {
+	padding: 0.5rem;
+	background-color: var(--skeleton-color);
+}
+
+
+.crayons {
+	padding: .5rem 0;
+	display: flex;
+	gap: 20px;
+
+	&> :first-child {
+		color: black;
+		background-color: var(--sk-tag-color);
+		padding: 7px;
+		border-radius: 4px;
+	}
+}
+
+.tag {
+	padding: .7rem 0.5rem;
+	background-color: var(--skeleton-color);
+	width: 100%;
+}
+
+
+.cover {
+	width: 100%;
+	height: 130px;
+	border-radius: 13px;
+	background-color: var(--skeleton-color);
+}
+
+.footer {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	padding-top: 10px;
+}
+
+.heartIcon,
+.commentsIcon {
+	background-color: var(--skeleton-color);
+	size: 10px;
+	padding: 1rem;
+	border-radius: 7px;
+}
+
+
+@media only screen and (max-width: 767px) {
+	.article {
+		width: 98%;
+	}
+
+	.cover {
+		height: 100px;
+	}
+
+	.icons,
+	.commentIcon {
+		width: 36px;
+		height: 36px;
+	}
+}
+
+.avatar,
+.username,
+.postDate,
+.title,
+.summary,
+.tag,
+.cover,
+.icons,
+.commentIcon,
+.lineStroke {
+	animation: skeleton-loading 2s linear infinite;
+}
+
+@keyframes skeleton-loading {
+	0% {
+		background-color: var(--skeleton-color);
+	}
+
+
+	25% {
+		background-color: var(--skeleton-color);
+	}
+
+
+	50% {
+		background-color: var(--skeleton-light);
+	}
+
+	100% {
+		background-color: var(--skeleton-color);
+	}
+}
