@@ -10,7 +10,7 @@ function expensiveCall() {
 }
 export const getPublicArtilces = async ({ query, currentPage }: { query: string, currentPage: number }) => {
 	try {
-		const res = await fetch(`${BASE_URL}/posts?query=${query}&page=${currentPage}`);
+		const res = await fetch(`${BASE_URL}/posts?query=${query}&page=${currentPage}&limit=2`, { cache: 'no-store' });
 		if (!res.ok) throw new Error("Bad Response", {
 			cause: {
 				res,

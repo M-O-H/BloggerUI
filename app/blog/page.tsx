@@ -1,12 +1,14 @@
 import styles from './blog.module.css';
 import Article from "@/components/article/Article";
 import ArticleSkeleton from '@/components/loadders/article-skeleton';
+import { Pagination } from '@/components/pagination/pagination';
 import Search from '@/components/search';
 import { getPublicArtilces } from '@/utils/FetchData';
 import { Suspense } from 'react';
 
 
 const ArticleList = async ({ query, currentPage }: { query: string, currentPage: number }) => {
+  console.log('art', query, currentPage);
   const articles = await getPublicArtilces({ query, currentPage });
   return (
     <>
@@ -56,6 +58,7 @@ const BlogPost = async (props: {
         <ArticleList query={query} currentPage={currentPage} />
       </Suspense>
     </main>
+    <Pagination />
   </>
 };
 
