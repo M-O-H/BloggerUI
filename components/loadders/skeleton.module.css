@@ -41,7 +41,6 @@
 	width: 190px;
 }
 
-
 .title {
 	padding: 0.8rem;
 	background-color: var(--skeleton-color);
@@ -55,33 +54,27 @@
 	padding: 0.5rem;
 	background-color: var(--skeleton-color);
 	margin-bottom: 10px;
+	border-radius: 4px;
 }
 
-.stroke {
+.lineStroke {
 	padding: 0.5rem;
 	background-color: var(--skeleton-color);
+	border-radius: 4px;
 }
 
-
 .crayons {
-	padding: .5rem 0;
+	padding: 0.5rem 0;
 	display: flex;
 	gap: 20px;
-
-	&> :first-child {
-		color: black;
-		background-color: var(--sk-tag-color);
-		padding: 7px;
-		border-radius: 4px;
-	}
 }
 
 .tag {
-	padding: .7rem 0.5rem;
+	padding: 0.7rem 0.5rem;
 	background-color: var(--skeleton-color);
 	width: 100%;
+	border-radius: 4px;
 }
-
 
 .cover {
 	width: 100%;
@@ -100,14 +93,13 @@
 .heartIcon,
 .commentsIcon {
 	background-color: var(--skeleton-color);
-	size: 10px;
-	padding: 1rem;
+	width: 40px;
+	height: 40px;
 	border-radius: 7px;
 }
 
-
 @media only screen and (max-width: 767px) {
-	.article {
+	.link {
 		width: 98%;
 	}
 
@@ -115,8 +107,8 @@
 		height: 100px;
 	}
 
-	.icons,
-	.commentIcon {
+	.heartIcon,
+	.commentsIcon {
 		width: 36px;
 		height: 36px;
 	}
@@ -129,22 +121,16 @@
 .summary,
 .tag,
 .cover,
-.icons,
-.commentIcon,
-.lineStroke {
-	animation: skeleton-loading 2s linear infinite;
+.lineStroke,
+.heartIcon,
+.commentsIcon {
+	animation: skeleton-loading var(--skeleton-animation-duration) linear infinite;
 }
 
 @keyframes skeleton-loading {
 	0% {
 		background-color: var(--skeleton-color);
 	}
-
-
-	25% {
-		background-color: var(--skeleton-color);
-	}
-
 
 	50% {
 		background-color: var(--skeleton-light);

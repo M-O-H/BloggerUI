@@ -2,10 +2,11 @@ import React from 'react';
 import { NavigationItem } from './NavigationItem';
 import styles from './Navigation.module.css';
 import Link from 'next/link';
+import UserAvatar from './UserAvatar';
 
 const navigationItems = ['Home', 'About', 'Blog', 'Write'];
 
-const HamMenu = () => {
+const HamMenu = async () => {
 	return <Link href="#" className={styles.hamMenu}>
 		<span></span>
 		<span></span>
@@ -24,15 +25,7 @@ export const Navigation: React.FC = () => {
 					))}
 				</ul>
 			</nav>
-			<div className={styles.ButtonWrapper}>
-				<button className={styles.loginButton}>
-					Login
-				</button>
-
-				<button className={styles.registerButton}>
-					Register
-				</button>
-			</div>
+			<UserAvatar />
 		</header>
 	);
 };

@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next'
 import styles from '../auth.module.css';
 import InputField from '@/components/form/inputField';
@@ -21,7 +20,7 @@ const Options = () =>
 
 		</div>
 
-		<link href="#forgot-password">Forget password</link>
+		<Link href="#forgot-password">Forget password</Link>
 
 	</div>
 

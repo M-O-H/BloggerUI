@@ -1,8 +1,10 @@
 'use client'
-import { authUser } from '@/utils/FetchData';
+import { authUser, getUserProfile } from '@/utils/FetchData';
 import styles from './form.module.css';
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useRouter } from 'next/navigation';
 
+// TODO: chnage to appropriate types
 interface SubmitFormProps {
 	nameInputField?: any;
 	emailInputField?: any;
@@ -16,7 +18,7 @@ interface SubmitFormProps {
 const SubmitForm: React.FC<SubmitFormProps> = ({ nameInputField, emailInputField, passInputField, Options, SubmitButton, ValidationMsg, route }) => {
 
 	const [showMsg, setShowMsg] = useState(false);
-
+	const router = useRouter();
 	const handleSUbmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 		let credentials;
@@ -34,10 +36,17 @@ const SubmitForm: React.FC<SubmitFormProps> = ({ nameInputField, emailInputField
 		const response = await authUser(credentials, route);
 
 		if (!response) setShowMsg(true);
-		console.log(response);
+		else router.push('/blog')
 
 	}
 
+	useEffect(() => {
+		(async () => {
+			const userData = await getUserProfile()
+			if (userData) router.push('/blog')
+
+		})();
+	}, [])
 
 	return (
 		<form onSubmit={handleSUbmit} onFocus={() => setShowMsg(false)} className={styles.formContainer} >

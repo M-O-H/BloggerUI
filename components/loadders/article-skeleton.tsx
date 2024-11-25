@@ -1,47 +1,41 @@
 import React from 'react';
 import styles from './skeleton.module.css';
 
+const SkeletonElement = ({ className }) => <div className={`${className} ${styles.skeleton}`}></div>;
 
-const CardSkeleton = () => {
-	return (
-		<div className={styles.link}>
-			<div className={`${styles.author} ${styles.skeleton}`}>
-				<div className={`${styles.avatar} ${styles.skeleton}`}></div>
-				<div className={`${styles.authorInfo} ${styles.skeleton}`}>
-					<div className={`${styles.username} ${styles.skeleton}`}>
-					</div>
-					<div className={`${styles.postDate} ${styles.skeleton}`}>
-					</div>
-
-				</div>
-			</div>
-			<div className={`${styles.header} ${styles.skeleton}`}>
-				<div className={`${styles.title} ${styles.skeleton}`}></div>
-				<div className={`${styles.summary} ${styles.skeleton}`}></div>
-				<div className={`${styles.lineStroke} ${styles.skeleton}`}></div>
-			</div>
-			<div className={`${styles.crayons} ${styles.skeleton}`}>
-				<div className={`${styles.tag} ${styles.skeleton}`}></div>
-				<div className={`${styles.tag} ${styles.skeleton}`}></div>
-				<div className={`${styles.tag} ${styles.skeleton}`}></div>
-				<div className={`${styles.tag} ${styles.skeleton}`}></div>
-			</div>
-			<div className={`${styles.cover} ${styles.skeleton}`}></div>
-			<div className={`${styles.footer} ${styles.skeleton}`}>
-				<div className={`${styles.heartIcon} ${styles.skeleton}`}></div>
-				<div className={`${styles.commentsIcon} ${styles.skeleton}`}></div>
+const CardSkeleton = () => (
+	<div className={styles.link}>
+		<div className={`${styles.author} ${styles.skeleton}`}>
+			<SkeletonElement className={styles.avatar} />
+			<div className={styles.authorInfo}>
+				<SkeletonElement className={styles.username} />
+				<SkeletonElement className={styles.postDate} />
 			</div>
 		</div>
-	);
-}
-const ArticleSkeleton = () => {
-	return <>
-		<CardSkeleton />
-		<CardSkeleton />
-		<CardSkeleton />
-		<CardSkeleton />
-		<CardSkeleton />
-		<CardSkeleton />
+		<div className={styles.header}>
+			<SkeletonElement className={styles.title} />
+			<SkeletonElement className={styles.summary} />
+			<SkeletonElement className={styles.lineStroke} />
+		</div>
+		<div className={styles.crayons}>
+			{Array(4).fill().map((_, index) => (
+				<SkeletonElement key={index} className={styles.tag} />
+			))}
+		</div>
+		<SkeletonElement className={styles.cover} />
+		<div className={styles.footer}>
+			<SkeletonElement className={styles.heartIcon} />
+			<SkeletonElement className={styles.commentsIcon} />
+		</div>
+	</div>
+);
+
+const ArticleSkeleton = () => (
+	<>
+		{Array(6).fill().map((_, index) => (
+			<CardSkeleton key={index} />
+		))}
 	</>
-}
+);
+
 export default ArticleSkeleton;

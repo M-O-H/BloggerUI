@@ -20,7 +20,7 @@ const Articles: React.FC<ArticlesProps> = ({ authorName, title, summary, imageUr
 
 				<div className={styles.author}>
 					<img className={styles.avatar}
-						src="/wallhaven-o3lx3l.png"
+						src="/profile-1335-svgrepo-com.svg"
 						alt="Picture of the author"
 						width={50}
 						height={50}
