@@ -4,6 +4,7 @@ import CommentIcon from './Comment-icon';
 import Link from 'next/link';
 
 interface ArticlesProps {
+	articleId: number,
 	authorName: string,
 	imageUrl: string,
 	postDate: string,
@@ -13,9 +14,9 @@ interface ArticlesProps {
 	likes: number,
 }
 
-const Articles: React.FC<ArticlesProps> = ({ authorName, title, summary, imageUrl, postDate, comments, likes }) => {
+const Articles: React.FC<ArticlesProps> = ({ articleId, authorName, title, summary, imageUrl, postDate, comments, likes }) => {
 	return (
-		<Link className={styles.link} href='#'>
+		<Link className={styles.link} href={`/blog/${articleId}`} >
 			<article className={styles.article}>
 
 				<div className={styles.author}>
@@ -57,7 +58,7 @@ const Articles: React.FC<ArticlesProps> = ({ authorName, title, summary, imageUr
 					</div>
 				</footer>
 			</article>
-		</Link>
+		</Link >
 	);
 }
 

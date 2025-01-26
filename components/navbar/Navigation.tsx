@@ -4,7 +4,7 @@ import styles from './Navigation.module.css';
 import Link from 'next/link';
 import UserAvatar from './UserAvatar';
 
-const navigationItems = ['Home', 'About', 'Blog', 'Write'];
+const navigationItems = ['Home', 'About', 'Blog', 'New', "profile"];
 
 const HamMenu = async () => {
 	return <Link href="#" className={styles.hamMenu}>

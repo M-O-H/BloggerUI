@@ -11,10 +11,8 @@ export const Pagination = () => {
 
 	const searchParams = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '');
 	const defaultPageNum = searchParams.get('query') || 1;
-	console.log(defaultPageNum);
 
 	const handlePagination = useDebouncedCallback((increment: number) => {
-		console.log('clicked')
 		const newPage = pageCount + increment;
 		if (newPage < 1) return; // Prevent going to pages below 1
 

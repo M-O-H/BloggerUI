@@ -1,0 +1,24 @@
+.button {
+	border-radius: 6px;
+	font: 400 12px Inter, sans-serif;
+	cursor: pointer;
+	border: none;
+	padding: 16px 40px;
+}
+
+.primary {
+	background-color: rgba(98, 137, 255, 1);
+	color: rgba(255, 255, 255, 1);
+}
+
+.secondary {
+	background-color: rgba(20, 46, 106, 0);
+	color: rgba(98, 137, 255, 1);
+	border: 1px solid rgba(52, 78, 136, 1);
+}
+
+@media (max-width: 991px) {
+	.button {
+		padding: 0 20px;
+	}
+}

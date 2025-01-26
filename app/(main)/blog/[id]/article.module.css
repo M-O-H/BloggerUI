@@ -1,0 +1,194 @@
+.articleLayout {
+  padding: 4rem 25rem;
+}
+
+.articleContent {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.articleTitle {
+  font-size: clamp(1.6rem, 1vw + 1rem, 6rem);
+  color: var(--foreground);
+}
+
+.authorInfo {
+  display: flex;
+  gap: 9px;
+  margin-top: 20px;
+  font: 13px Inter, sans-serif;
+}
+
+.authorAvatar {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.authorMeta {
+  display: flex;
+  flex-direction: column;
+}
+
+.authorName {
+  color: #f6f8f7;
+  font-weight: 600;
+}
+
+.publishInfo {
+  display: flex;
+  gap: 4px;
+  color: #a0a0a0;
+  margin-top: 4px;
+}
+
+.contentMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.articleMeta {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tagContainer {
+  display: flex;
+  gap: 16px;
+  color: #f6f8f7;
+  font-weight: 600;
+}
+
+.tag {
+  font-size: clamp(0.875rem, 1.5vw + 0.5rem, 1.25rem);
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+
+.tagTechnology {
+  padding: 3px 6px;
+  border-radius: 4px;
+  background-color: #c0a3ff;
+}
+
+.metrics {
+  display: flex;
+}
+
+.metricItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: clamp(0.875rem, 1.5vw + 0.5rem, 1.25rem);
+}
+
+.metricSpan {
+  color: var(--foreground);
+}
+
+.metricIcon {
+  width: 50%;
+  background: none;
+  color: var(--foreground);
+  border: none;
+}
+
+.shareButton {
+  border: none;
+  background: none;
+}
+
+.socialStats {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.statGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.statIcon {
+  width: 35px;
+  height: 35px;
+}
+
+
+.statIcon {
+  width: 35px;
+  height: 35px;
+}
+
+.shareIcon {
+  width: 35px;
+  height: 35px;
+}
+
+.featureImage {
+  width: 100%;
+  margin-top: 22px;
+  aspect-ratio: 2.02;
+  object-fit: fill;
+}
+
+.sectionTitle {
+  color: #000;
+  font: 500 36px/1 Montserrat, sans-serif;
+  margin-top: 43px;
+}
+
+.blogContent {
+  margin-top: 42px;
+  color: #f6f8f7;
+  font: 500 18px/30px Montserrat, sans-serif;
+}
+
+.featuredImage {
+  align-self: center;
+  width: 71%;
+  height: 10%;
+}
+
+
+@media only screen and (max-width: 767px) {
+  .articleLayout {
+    padding: 2rem;
+  }
+
+  .articleMeta {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .metrics {
+    justify-content: end;
+  }
+
+  .metricItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: clamp(0.875rem, 1.5vw + 0.5rem, 1.25rem);
+    margin: 1rem 0;
+  }
+
+  .metricIcon {
+    width: 40%;
+    fill: var(--foreground)
+  }
+
+  .featuredImage {
+    width: 100%;
+    aspect-ratio: 1.02;
+    object-fit: fill;
+  }
+}
