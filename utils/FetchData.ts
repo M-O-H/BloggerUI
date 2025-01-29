@@ -55,6 +55,32 @@ export const getPublicArtilces = async ({ query, currentPage }: { query: string,
 	catch (err) {
 	}
 }
+interface articleData {
+	title: string | undefined
+	content: string
+	tags: string[]
+	cover: string | undefined
+	published: boolean
+}
+export const createPost = async (data: articleData) => {
+	try {
+		const res = await fetch(`${BASE_URL}/posts/`, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			credentials: 'include', // Important: This ensures cookies are sent with the request!
+			body: JSON.stringify(data)
+		}
+		); if (!res.ok) throw new Error("Bad Response", {
+			cause: {
+				res,
+			},
+		})
+		return await res.json();
+	}
+	catch (err) {
+		console.log(err);
+	}
+}
 
 export const getarticleById = async (articleId: string) => {
 	try {
@@ -118,8 +144,7 @@ export const authUser = async (data: userData, route: string) => {
 export const logout = async () => {
 	try {
 		const res = await fetch(`${BASE_URL}/auth/signout`, {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
+			method: 'POST', headers: { 'Content-Type': 'application/json' },
 			credentials: 'include', // Important: This ensures cookies are sent with the request!
 			cache: 'no-cache'
 		}

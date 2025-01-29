@@ -2,7 +2,10 @@
 import { useState, useRef, KeyboardEvent } from 'react';
 import styles from './TagsInput.module.css';
 
-const TagsInput = () => {
+type ChildProps = {
+	sendTagsToParent: (value: string[]) => void;
+};
+const TagsInput = ({ sendTagsToParent }: ChildProps) => {
 	const [tags, setTags] = useState<string[]>([]);
 	const [inputValue, setInputValue] = useState('');
 	const inputRef = useRef<HTMLInputElement>(null);
@@ -11,6 +14,7 @@ const TagsInput = () => {
 		const trimmedValue = inputValue.trim();
 		if (trimmedValue && !tags.includes(trimmedValue)) {
 			setTags(prev => [...prev, trimmedValue]);
+			sendTagsToParent(tags)
 			setInputValue('');
 		}
 	};
