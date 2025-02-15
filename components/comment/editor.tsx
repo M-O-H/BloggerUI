@@ -41,7 +41,7 @@ const CommentEditor: React.FC<commentProps> = ({ postId, CommentList }) => {
 				{
 					auth ?
 						<button onClick={() => submit()} className={styles.btn}>Add</button> :
-						<Link href={'auth/signin'} className={styles.btn}>Add</Link>
+						<Link href={'auth/signin'} className={styles.btn}>Login</Link>
 
 				}
 			</div>

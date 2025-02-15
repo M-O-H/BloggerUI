@@ -1,0 +1,59 @@
+.themeToggle {
+  background: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 0;
+}
+
+.themeToggle:hover {
+  transform: scale(1.1);
+}
+
+.iconWrapper {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.darkMode {
+  transform: rotate(180deg);
+}
+
+.sunIcon,
+.moonIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--text-dm);
+  transition: all 0.3s ease;
+}
+
+.darkMode .sunIcon {
+  transform: rotate(180deg) scale(0);
+  opacity: 0;
+}
+
+.darkMode .moonIcon {
+  transform: rotate(0) scale(1);
+  opacity: 1;
+}
+
+.sunIcon {
+  transform: rotate(0) scale(1);
+  opacity: 1;
+}
+
+.moonIcon {
+  transform: rotate(-180deg) scale(0);
+  opacity: 0;
+} 

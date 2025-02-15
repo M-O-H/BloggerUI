@@ -1,0 +1,109 @@
+.skeleton {
+  background: var(--skeleton-color);
+  background: linear-gradient(
+    110deg,
+    var(--skeleton-color) 8%,
+    var(--skeleton-light) 18%,
+    var(--skeleton-color) 33%
+  );
+  background-size: 200% 100%;
+  animation: shine 1.5s infinite linear;
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
+
+.text {
+  height: 1em;
+  border-radius: 4px;
+  margin: 0.5em 0;
+}
+
+.circular {
+  border-radius: 50%;
+}
+
+.rectangular {
+  border-radius: var(--border-radius);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  background: var(--bg-dm);
+  border-radius: var(--border-radius);
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+.profileHeader {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+}
+
+.navigation {
+  display: flex;
+  gap: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--card-border-color);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.skeletonCard {
+  background: var(--bg-dm);
+  border-radius: var(--border-radius);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.authorInfo {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.authorText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats {
+  display: flex;
+  gap: 12px;
+} 

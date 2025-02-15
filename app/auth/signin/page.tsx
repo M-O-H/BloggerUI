@@ -17,7 +17,6 @@ const Options = () =>
 
 		<div className={styles.rememberMeContainer}>
 
-
 		</div>
 
 		<Link href="#forgot-password">Forget password</Link>

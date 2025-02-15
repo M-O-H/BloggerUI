@@ -6,13 +6,13 @@ import { useRouter } from 'next/navigation';
 
 // TODO: chnage to appropriate types
 interface SubmitFormProps {
-	nameInputField?: any;
-	emailInputField?: any;
-	passInputField: any;
-	Options: any;
-	SubmitButton: any;
-	ValidationMsg: any;
-	route: string,
+	nameInputField?: React.ReactNode;
+	emailInputField?: React.ReactNode;
+	passInputField: React.ReactNode;
+	Options: React.ReactNode;
+	SubmitButton: React.ReactNode;
+	ValidationMsg: React.ReactNode;
+	route: string;
 }
 
 const SubmitForm: React.FC<SubmitFormProps> = ({ nameInputField, emailInputField, passInputField, Options, SubmitButton, ValidationMsg, route }) => {
@@ -34,7 +34,6 @@ const SubmitForm: React.FC<SubmitFormProps> = ({ nameInputField, emailInputField
 
 
 		const response = await authUser(credentials, route);
-
 		if (!response) setShowMsg(true);
 		else router.push('/blog')
 

@@ -4,14 +4,15 @@ import styles from './ArticleEditor.module.css';
 import { Button } from './Button';
 import BlogEditor from '@/components/mdEditor/mdEditor';
 import TagsInput from '@/components/tagInput/tagsInput';
-import { image } from '@uiw/react-md-editor';
 import { createPost } from '@/utils/FetchData';
+import { useRouter } from 'next/navigation';
 
 const ArticleEditor: React.FC = () => {
   const [content, setContent] = useState<string>("");
   const [tags, setTags] = useState<string[]>([]);
   const titleRef = useRef<HTMLInputElement>(null); // TypeScript
   const imageRef = useRef<HTMLInputElement>(null); // TypeScript
+  const router = useRouter()
 
   const handleTagSubmit = (data: string[]) => {
     setTags(data)
@@ -36,9 +37,12 @@ const ArticleEditor: React.FC = () => {
     const createdArticle = await createPost(article);
     if (!createdArticle) {
       console.log("someting went wrong")
+      return
     }
-    console.log(createdArticle)
+    router.replace(`/blog/${createdArticle.preview.id}`)
   };
+
+
 
   return (
     <div className={styles.articleLayout}>
@@ -50,14 +54,9 @@ const ArticleEditor: React.FC = () => {
           <div className={styles.header}>
             <input className={styles.title} ref={titleRef} placeholder='Title' required />
           </div>
-
-          <input
-            placeholder='Add image cover'
-            type="file"
-            accept="image/*"
-            ref={imageRef}
-          />
-
+          <div>
+            <input type='text' placeholder="https://image.example.png" ref={imageRef} required className={styles.coverImageBtn} />
+          </div>
           <TagsInput sendTagsToParent={handleTagSubmit} />
 
           <Suspense >
@@ -71,8 +70,7 @@ const ArticleEditor: React.FC = () => {
         </form>
 
       </main>
-      <div className={styles.divider} />
-    </div>
+    </div >
   );
 };
 

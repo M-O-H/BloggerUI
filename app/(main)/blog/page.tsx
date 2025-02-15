@@ -1,35 +1,32 @@
 import styles from './blog.module.css';
-import Article from "@/components/article/Article";
+import ArticleComponent from "@/components/article/Article";
 import ArticleSkeleton from '@/components/loadders/article-skeleton';
 import { Pagination } from '@/components/pagination/pagination';
 import Search from '@/components/search';
 import { getPublicArtilces } from '@/utils/FetchData';
 import { Suspense } from 'react';
+import type { Article } from '@/types';
 
-const content = `Comparing the input latency of a modern PC to a system that’s 30–40 years old seems ridiculous on the face of it. Even if the computer on your desk or lap isn’t particularly new or very fast, it’s still clocked a thousand or more times faster than the cutting-edge technology of the 1980s, with multiple CPU cores, specialized decoder blocks, and support for video resolutions and detail levels on par with what science fiction of the era had dreamed up. In short, you’d think the comparison would be a one-sided blowout. In many cases, it is, but not with the winners you’d expect.
-
-Engineer Dan Luu recently got curious about how various devices compare in terms of input latency and carried a high-speed camera around to measure input lag on some of them, because this is the sort of awesome thing engineers sometimes do. What he found is rather striking, as shown by the table below:`
 const ArticleList = async ({ query, currentPage }: { query: string, currentPage: number }) => {
-  console.log('art', query, currentPage);
   const articles = await getPublicArtilces({ query, currentPage });
   return (
     <>
       {
         articles ?
-          articles.map(article => (
-            <Article
+          articles.map((article: Article) => (
+            <ArticleComponent
               key={article.id}
-              articleId={article.id}
+              articleId={parseInt(article.id)}
               authorName={article.author.username}
               postDate={article.createdAt}
               title={article.title}
               summary={article.content}
               imageUrl={article.cover}
-              comments={article.comments.length}
-              likes={article.likes.length}
+              comments={Number(article.comments.length)}
+              likes={Number(article.likes.length)}
             />
           ))
-          : <h1>Not found</h1>
+          : <h1>"{query}" Article not found</h1>
       }
     </>
   );

@@ -63,7 +63,7 @@ const TagsInput = ({ sendTagsToParent }: ChildProps) => {
 				value={inputValue}
 				onChange={(e) => setInputValue(e.target.value)}
 				onKeyDown={handleKeyDown}
-				placeholder="Add a tag..."
+				placeholder="Add a #tag..."
 				className={styles.input}
 			/>
 		</div>

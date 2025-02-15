@@ -3,6 +3,7 @@ import { getarticleById, getCommentsByPostId, getPosts } from "@/utils/FetchData
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import CommentSection from './commentSection'
 import CommentEditor from '@/components/comment/editor'
+import Image from 'next/image'
 
 interface Iauthor {
   id: number
@@ -45,7 +46,7 @@ export default async function Page({ params }: { params: { id: string } }) {
 
   const post: Post = await getarticleById(params.id);
   const comments: Icomment[] = await getCommentsByPostId(parseInt(params.id, 10))
-
+  console.log(post)
 
   return (
     <main className={styles.articleLayout}>

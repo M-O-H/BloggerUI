@@ -3,8 +3,9 @@ import { NavigationItem } from './NavigationItem';
 import styles from './Navigation.module.css';
 import Link from 'next/link';
 import UserAvatar from './UserAvatar';
+import ThemeToggle from '@/utils/ThemeToggle';
 
-const navigationItems = ['Home', 'About', 'Blog', 'New', "profile"];
+const navigationItems = ['About', 'Blog', 'New', "Profile"];
 
 const HamMenu = async () => {
 	return <Link href="#" className={styles.hamMenu}>
@@ -23,6 +24,7 @@ export const Navigation: React.FC = () => {
 					{navigationItems.map((item) => (
 						<NavigationItem key={item} text={item.toLowerCase()} />
 					))}
+					<ThemeToggle />
 				</ul>
 			</nav>
 			<UserAvatar />

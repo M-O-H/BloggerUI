@@ -25,8 +25,8 @@ export const Pagination = () => {
 
 	return (
 		<div className={styles.container}>
-			<button className={styles.btn} onClick={() => handlePagination(1)}>Next</button>
 			<button className={styles.btn} onClick={() => handlePagination(-1)}>Previous</button>
+			<button className={styles.btn} onClick={() => handlePagination(1)}>Next</button>
 		</div>
 	);
 };

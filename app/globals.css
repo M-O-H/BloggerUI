@@ -7,7 +7,7 @@
   --text-dm: #636a76;
   --primary-hsl: 940;
   --previewCard-bg-color: #FFFFFF;
-  --card-border-color: none;
+  --card-border-color: #FFFFFF;
   --sk-tag-color: #1c253b;
   --summary-color: #5c5c5c;
   --navbar-bg-color: #FFFFFF;
@@ -24,7 +24,8 @@ html.dark {
   --text-dm: #9896a3;
   --primary-hsl: 222;
   --primary-dm: #162138;
-  --previewCard-bg-color: #151e30;
+  /* --previewCard-bg-color: #151e30; */
+  --previewCard-bg-color: #131a28;
   --card-border-color: #242A38;
   --summary-color: #d5e9ef;
   --navbar-bg-color: #0E131E;

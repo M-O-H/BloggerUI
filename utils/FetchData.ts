@@ -7,7 +7,7 @@ function expensiveCall() {
 		setTimeout(() => {
 			const data = { message: "Data fetched after 2 seconds" };
 			resolve(data);
-		}, 3001); // Delay of 2 seconds
+		}, 2001); // Delay of 2 seconds
 	});
 }
 
@@ -96,7 +96,6 @@ export const getarticleById = async (articleId: string) => {
 	}
 }
 export const updatedPost = async (id: number) => {
-	expensiveCall();
 	try {
 		const res = await fetch(`${BASE_URL}/posts/${id}`, {
 			method: 'PATCH',
@@ -168,6 +167,7 @@ export const getUserProfile = async () => {
 			method: 'GET',
 			headers: { 'Content-Type': 'application/json' },
 			credentials: 'include', // Important: This ensures cookies are sent with the request!
+			cache: 'no-store'
 		}
 		); if (!res.ok) throw new Error("Bad Response", {
 			cause: {
@@ -235,7 +235,6 @@ export const likeComment = async (commentId: number, likeType: string) => {
 				res,
 			},
 		})
-		console.log(res)
 		return await res.json();
 	}
 	catch (err) {

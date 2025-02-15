@@ -4,7 +4,7 @@
 	padding-top: 2rem;
 	overflow: hidden;
 	color: var(--foreground);
-	background: var(--dark-background, #0a0d14);
+	background: var(--dark-background)
 }
 
 .mainContent {
@@ -36,7 +36,13 @@
 }
 
 .coverImageBtn {
+	background-color: var(--background);
+	font-weight: bold;
+	font-size: 20px;
 	margin: 7px 0 0 12px;
+	border: none;
+	outline: none;
+	padding: 1rem 0;
 }
 
 .tagsSection {

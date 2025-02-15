@@ -1,0 +1,50 @@
+.card {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: var(--bg-dm);
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.cardContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cardContent h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+}
+
+.cardContent p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 0.25rem 0.75rem;
+  background: var(--background-secondary);
+  border-radius: 16px;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.cardImage {
+  object-fit: cover;
+  border-radius: 4px;
+} 
