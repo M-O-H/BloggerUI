@@ -9,8 +9,8 @@ export const Pagination = () => {
 	const pathname = usePathname();
 	const { replace } = useRouter();
 
-	const searchParams = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '');
-	const defaultPageNum = searchParams.get('query') || 1;
+	// const searchParams = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '');
+	// const defaultPageNum = searchParams.get('query') || 1;
 
 	const handlePagination = useDebouncedCallback((increment: number) => {
 		const newPage = pageCount + increment;

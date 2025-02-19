@@ -23,11 +23,11 @@ const SubmitForm: React.FC<SubmitFormProps> = ({ nameInputField, emailInputField
 		e.preventDefault();
 		let credentials;
 		if (emailInputField) {
-			const [usernameField, emailField, passwordField]: any = e.target;
+			const [usernameField, emailField, passwordField] = e.target as unknown as [HTMLInputElement, HTMLInputElement, HTMLInputElement];
 			const [username, email, password] = [usernameField.value, emailField.value, passwordField.value];
 			credentials = { username, email, password }
 		} else {
-			const [usernameField, passwordField]: any = e.target;
+			const [usernameField, passwordField] = e.target as unknown as [HTMLInputElement, HTMLInputElement];
 			const [username, password] = [usernameField.value, passwordField.value];
 			credentials = { username, password }
 		}

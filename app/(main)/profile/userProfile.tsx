@@ -44,46 +44,46 @@ export function UserProfile() {
             ) : (
               articles.map((article) => (
                 <Link href={`/blog/${article.id}`} key={article.id} style={{ textDecoration: 'none' }}>
-                <article key={article.id} className={styles.articleCard}>
-                  <div className={styles.articleHeader}>
-                    <div className={styles.articleMeta}>
-                      <img src="/avatar.jpg" alt="" className={styles.authorAvatar} />
-                      <div>
-                        <span className={styles.authorName}>{user?.username}</span>
-                        <span className={styles.articleDate}>24 jun(3 day ago) • 7 min read</span>
+                  <article key={article.id} className={styles.articleCard}>
+                    <div className={styles.articleHeader}>
+                      <div className={styles.articleMeta}>
+                        <img src="/avatar.jpg" alt="" className={styles.authorAvatar} />
+                        <div>
+                          <span className={styles.authorName}>{user?.username}</span>
+                          <span className={styles.articleDate}>24 jun(3 day ago) • 7 min read</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
 
-                  <div className={styles.articleContent}>
-                    <h2 className={styles.articleTitle}>
-                      {article.title.length > 50 ? `${article.title.substring(0, 58)}...` : article.title}
-                    </h2>
-                    <p className={styles.articleDescription}>{article.description}</p>
-                  </div>
-
-                  {article.cover && (
-                    <div className={styles.articleImage}>
-                      <img src={article.cover} alt={article.title} />
+                    <div className={styles.articleContent}>
+                      <h2 className={styles.articleTitle}>
+                        {article.title.length > 50 ? `${article.title.substring(0, 58)}...` : article.title}
+                      </h2>
+                      <p className={styles.articleDescription}>{article.description}</p>
                     </div>
-                  )}
 
-                  <div className={styles.articleFooter}>
-                    <div className={styles.tags}>
-                      {/* {article.tags.split(',')?.map((tag) => (
+                    {article.cover && (
+                      <div className={styles.articleImage}>
+                        <img src={article.cover} alt={article.title} />
+                      </div>
+                    )}
+
+                    <div className={styles.articleFooter}>
+                      <div className={styles.tags}>
+                        {/* {article.tags.split(',')?.map((tag) => (
                         <span key={tag} className={styles.tag}>#{tag}</span>
                       ))} */}
+                      </div>
+                      <div className={styles.metrics} style={{ justifyContent: 'flex-start', gap: '16px' }}>
+                        <span>❤️ 300</span>
+                        <span>💬 300</span>
+                        <button className={styles.saveButton}>
+                          <span>⋮</span>
+                        </button>
+                      </div>
                     </div>
-                    <div className={styles.metrics} style={{ justifyContent: 'flex-start', gap: '16px' }}>
-                      <span>❤️ 300</span>
-                      <span>💬 300</span>
-                      <button className={styles.saveButton}>
-                        <span>⋮</span>
-                      </button>
-                    </div>
-                  </div>
-                </article>
+                  </article>
                 </Link>
               ))
             )}
@@ -104,13 +104,13 @@ export function UserProfile() {
     <div className={styles.container}>
       <div className={styles.profileHeader}>
         <div className={styles.profileInfo}>
-            <Image
-              src="/profile-circle-svgrepo-com.svg"
-              alt="Profile avatar"
-              width={100}
-              height={100}
-              className={styles.profileAvatar}
-            />
+          <Image
+            src="/profile-circle-svgrepo-com.svg"
+            alt="Profile avatar"
+            width={100}
+            height={100}
+            className={styles.profileAvatar}
+          />
           <h1 className={styles.profileName}>Mohamed salah</h1>
           <p className={styles.profileBio}>
             Author Nameinceptos himenaeos. Aliquam sit amet ipsum ac velit egestas ultrices. Vestibulum
@@ -118,7 +118,7 @@ export function UserProfile() {
         </div>
         <button className={styles.followButton}>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className={styles.followIcon}>
-            <path d="M12 4.5V19.5M19.5 12H4.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            <path d="M12 4.5V19.5M19.5 12H4.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
           </svg>
           Follow
         </button>

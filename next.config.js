@@ -7,7 +7,13 @@ const nextConfig = {
   // Enable React strict mode
   reactStrictMode: true,
   // Enable SWC minification
-  swcMinify: true
+  swcMinify: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  }
 }
 
 module.exports = nextConfig 

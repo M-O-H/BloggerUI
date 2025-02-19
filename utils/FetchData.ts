@@ -1,13 +1,12 @@
-const PORT = 3002
-const IP = "http://192.168.116.165:3002/api/v1"
-const BASE_URL = `http://localhost:${PORT}/api/v1`
+const PORT = process.env.NEXT_PUBLIC_API_PORT || 3000
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL || `http://localhost:${PORT}/api/v1`
 
 function expensiveCall() {
 	return new Promise((resolve) => {
 		setTimeout(() => {
 			const data = { message: "Data fetched after 2 seconds" };
 			resolve(data);
-		}, 2001); // Delay of 2 seconds
+		}, 8001); // Delay of 2 seconds
 	});
 }
 
@@ -162,6 +161,7 @@ export const logout = async () => {
 
 
 export const getUserProfile = async () => {
+	// await expensiveCall()
 	try {
 		const res = await fetch(`${BASE_URL}/users/profile`, {
 			method: 'GET',

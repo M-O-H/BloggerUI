@@ -55,7 +55,7 @@ const SignInPage: React.FC = () => {
 			/>
 
 			<p className={styles.signUpPrompt}>
-				Don't have an account? <Link href='/auth/signup'>Sign Up</Link>
+				Don&apos;t have an account? <Link href="/auth/signup">Sign Up</Link>
 			</p>
 
 		</main >

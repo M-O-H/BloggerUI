@@ -26,7 +26,7 @@ const ArticleList = async ({ query, currentPage }: { query: string, currentPage:
               likes={Number(article.likes.length)}
             />
           ))
-          : <h1>"{query}" Article not found</h1>
+          : <h1>{query} Article not found</h1>
       }
     </>
   );
