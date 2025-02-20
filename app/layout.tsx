@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ThemeProvider from "@/utils/ThemeProvider";
+import { Navigation } from "@/components/navbar/Navigation";
 
 export const metadata: Metadata = {
   title: "Blogger",
@@ -16,6 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ThemeProvider>
+          <Navigation />
           {children}
         </ThemeProvider>
       </body>
