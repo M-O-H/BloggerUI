@@ -18,7 +18,7 @@ export const Navigation: React.FC = () => {
 	return (
 		<header className={styles.navigation}>
 			<HamMenu />
-			<h1 className={styles.brand}>Smallium</h1>
+			<h1 className={styles.brand}>DevShare</h1>
 			<nav className={styles.navbar}>
 				<ul className={styles.navigationList}>
 					{navigationItems.map((item) => (

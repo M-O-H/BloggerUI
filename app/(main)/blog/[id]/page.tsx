@@ -32,21 +32,24 @@ interface Post {
   comments: Icomment[]
 }
 
-export const revalidate = 60
-
-export async function generateStaticParams() {
-  const posts = await getPosts();
-  return posts.map((post: Post) => ({
-    id: String(post.id),
-  }))
-}
+export const dynamic = 'force-dynamic'
 
 export default async function Page({ params }: { params: { id: string } }) {
   try {
-    const post: Post = await getarticleById(params.id);
-    const comments: Icomment[] = await getCommentsByPostId(parseInt(params.id, 10));
+    const [post, comments] = await Promise.allSettled([
+      getarticleById(params.id),
+      getCommentsByPostId(parseInt(params.id, 10))
+    ]);
 
-    if (!post) {
+    if (post.status === 'rejected') {
+      console.error('Failed to fetch post:', post.reason);
+      return <div>Failed to load article. Please try again later.</div>;
+    }
+
+    const postData = post.value;
+    const commentsData = comments.status === 'fulfilled' ? comments.value : [];
+
+    if (!postData) {
       return <div>Article not found</div>;
     }
 
@@ -99,24 +102,25 @@ export default async function Page({ params }: { params: { id: string } }) {
             </div>
           </section>
 
-          {post.cover && (
+          {postData.cover && (
             <img
-              src={post.cover}
+              src={postData.cover}
               alt="Article featured image"
               className={styles.featuredImage}
             />
           )}
 
-          <MDXRemote source={post.content} />
+          <MDXRemote source={postData.content} />
 
-          <CommentEditor 
-            postId={parseInt(post.id)} 
-            CommentList={<CommentSection comments={comments} />} 
+          <CommentEditor
+            postId={parseInt(postData.id)}
+            CommentList={<CommentSection comments={commentsData} />}
           />
         </article>
       </main>
     );
   } catch (error) {
-    return <div>Error loading article</div>;
+    console.error('Error rendering page:', error);
+    return <div>Error loading article. Please try again later.</div>;
   }
 }
