@@ -1,6 +1,6 @@
 .comment {
 	border-radius: 5px;
-	background-color: rgba(10, 13, 20, 1);
+	background-color: var(--background);
 	display: flex;
 	align-items: start;
 	gap: 20px;
@@ -19,6 +19,7 @@
 }
 
 .content {
+	color: var(--foreground);
 	display: flex;
 	margin-top: 5px;
 	flex-direction: column;
@@ -33,7 +34,7 @@
 }
 
 .author {
-	color: rgba(246, 248, 247, 1);
+	color: var(--foreground);
 	font-weight: 600;
 }
 
@@ -43,7 +44,7 @@
 }
 
 .message {
-	color: rgba(246, 248, 247, 1);
+	color: var(--foreground);
 	font-family: Roboto, sans-serif;
 	font-weight: 400;
 	line-height: 20px;

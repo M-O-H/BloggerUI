@@ -2,7 +2,12 @@ import Comment from '@/components/comment/comment';
 import styles from './commentsSection.module.css'
 
 interface Iauthor {
+  id: number
   username: number,
+  email: string,
+  role: number,
+  createdAt: string,
+  updatedAt: string
 }
 
 interface icomment {

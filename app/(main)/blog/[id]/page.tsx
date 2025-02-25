@@ -1,7 +1,6 @@
 import styles from './article.module.css'
-import { getarticleById, getCommentsByPostId, getPosts } from "@/utils/FetchData"
+import { getarticleById } from "@/utils/FetchData"
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import CommentSection from './commentSection'
 import CommentEditor from '@/components/comment/editor'
 
 interface Iauthor {
@@ -36,22 +35,9 @@ export const dynamic = 'force-dynamic'
 
 export default async function Page({ params }: { params: { id: string } }) {
   try {
-    const [post, comments] = await Promise.allSettled([
-      getarticleById(params.id),
-      getCommentsByPostId(parseInt(params.id, 10))
-    ]);
-
-    if (post.status === 'rejected') {
-      console.error('Failed to fetch post:', post.reason);
-      return <div>Failed to load article. Please try again later.</div>;
-    }
-
-    const postData = post.value;
-    const commentsData = comments.status === 'fulfilled' ? comments.value : [];
-
-    if (!postData) {
-      return <div>Article not found</div>;
-    }
+    const post = await getarticleById(params.id)
+    const postData = post;
+    if (!postData.id) return <h1>Article not found</h1>
 
     return (
       <main className={styles.articleLayout}>
@@ -114,7 +100,6 @@ export default async function Page({ params }: { params: { id: string } }) {
 
           <CommentEditor
             postId={parseInt(postData.id)}
-            CommentList={<CommentSection comments={commentsData} />}
           />
         </article>
       </main>

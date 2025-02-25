@@ -1,7 +1,11 @@
 import React from 'react';
 import styles from './skeleton.module.css';
 
-const SkeletonElement = ({ className }) => <div className={`${className} ${styles.skeleton}`}></div>;
+interface SkeletonProps {
+	className: string;
+}
+
+const SkeletonElement: React.FC<SkeletonProps> = ({ className }) => <div className={`${className} ${styles.skeleton}`}></div>;
 
 const CardSkeleton = () => (
 	<div className={styles.link}>
@@ -18,7 +22,7 @@ const CardSkeleton = () => (
 			<SkeletonElement className={styles.lineStroke} />
 		</div>
 		<div className={styles.crayons}>
-			{Array(4).fill().map((_, index) => (
+			{Array(4).fill(undefined).map((_, index) => (
 				<SkeletonElement key={index} className={styles.tag} />
 			))}
 		</div>
@@ -32,7 +36,7 @@ const CardSkeleton = () => (
 
 const ArticleSkeleton = () => (
 	<>
-		{Array(6).fill().map((_, index) => (
+		{Array(6).fill(undefined).map((_, index) => (
 			<CardSkeleton key={index} />
 		))}
 	</>

@@ -7,6 +7,6 @@ const UserProfile = dynamic(() => import('./userProfile').then(mod => mod.UserPr
 
 export default function Profile() {
   return <>
-    <UserProfile />;
+    <UserProfile />
   </>
 }

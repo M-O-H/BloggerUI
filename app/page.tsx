@@ -34,8 +34,6 @@ const ArticleList = async ({ query, currentPage }: { query: string, currentPage:
 
 const Title = () => <h1 className={styles.title}>Browse ideas and stories</h1>
 
-
-
 const BlogPost = async (props: {
   searchParams?: Promise<{
     query?: string;

@@ -22,7 +22,7 @@ export default function AboutPage() {
           {/* Community section */}
           <div className={styles.jobSection}>
             <p className={styles.jobText}>
-              Join our growing community of tech enthusiasts. Whether you're a seasoned developer, a computer science student, or someone passionate about technology, we welcome your unique perspectives and experiences. Share your knowledge, learn from others, and be part of meaningful technical discussions that shape the future of technology.
+              Join our growing community of tech enthusiasts. Whether you are a seasoned developer, a computer science student, or someone passionate about technology, we welcome your unique perspectives and experiences. Share your knowledge, learn from others, and be part of meaningful technical discussions that shape the future of technology.
             </p>
             <a href="#" className={styles.link}>Join our community <span>→</span></a>
           </div>

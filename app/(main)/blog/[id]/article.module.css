@@ -1,5 +1,6 @@
 .articleLayout {
   padding: 4rem 25rem;
+  overflow: hidden;
 }
 
 .articleContent {

@@ -111,7 +111,7 @@ export function UserProfile() {
             height={100}
             className={styles.profileAvatar}
           />
-          <h1 className={styles.profileName}>Mohamed salah</h1>
+          <h1 className={styles.profileName}>{user?.username}</h1>
           <p className={styles.profileBio}>
             Author Nameinceptos himenaeos. Aliquam sit amet ipsum ac velit egestas ultrices. Vestibulum
           </p>
